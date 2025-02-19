@@ -1,18 +1,26 @@
+:root {
+    --primary-color: #ed5151;
+    --secondary-color: #ffffff;
+    --hover-color: #ff7f7f;
+    --background-color: #ffffff;
+    --text-color: #ed5151;
+}
+
 .header {
     padding: 20px;
     text-align: center;
-    background-color: #ed5151;
+    background-color: var(--primary-color);
     margin: -1%;
 }
 
 .header h1 {
     font-size: 300%;
-    color: #ffe4e4;
+    color: var(--secondary-color);
 }
 
 .header h2 {
     font-size: 150%;
-    color: #ffe4e4;
+    color: var(--secondary-color);
 }
 
 a {
@@ -28,18 +36,63 @@ a {
 
 .navbar a {
     padding: 14px 20px;
-    color: #ffe4e4;
+    color: var(--secondary-color);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 200%;
-    background-color: #ed5151;
+    background-color: var(--primary-color);
     margin: 5%;
 }
 
 .navbar a:hover {
-    background-color: #ff7f7f;
+    background-color: var(--hover-color);
 }
 
 html {
-    background-color: #ffe4e4;
+    background-color: var(--background-color);
+}
+
+.content {
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-size: 300%;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .header h1 {
+        font-size: 200%;
+    }
+
+    .header h2 {
+        font-size: 100%;
+    }
+
+    .navbar a {
+        padding: 10px 15px;
+        font-size: 150%;
+        margin: 2%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 150%;
+    }
+
+    .header h2 {
+        font-size: 80%;
+    }
+
+    .navbar a {
+        padding: 8px 10px;
+        font-size: 120%;
+        margin: 1%;
+    }
 }
