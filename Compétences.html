@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Théo Vienne</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function showPopup(skill) {
+            document.getElementById('popup-title').innerText = skill.title;
+            document.getElementById('popup-description').innerText = skill.description;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="header">
+        <img src="img/profile.png" alt="profile">
         <h1>Théo Vienne</h1>
-        <h2>Etudiant en BUT Informatique</h2>
+        <h2>Etudiant en 3éme année de BUT Informatique</h2>
     </div>
 
     <div class="navbar">
@@ -17,21 +31,44 @@
         <a href="Compétences.html">Compétences</a>
         <a href="CV.pdf">CV</a>
         <a href="Contact.html">Contact</a>
+        <a href="Projets.html">Projets</a>
+        <a href="Experience.html">Expériences</a>
     </div>
 
     <div class="skills">
         <h3>Compétences</h3>
+        <h4>Compétences de Développement</h4>
         <ul>
-            <li><img src="img/HTML.png" alt="HTML"></li>
-            <li><img src="img/CSS.png" alt="CSS"></li>
-            <li><img src="img/javascript.png" alt="JavaScript"></li>
-            <li><img src="img/python.png" alt="Python"></li>
-            <li><img src="img/java.png" alt="Java"></li>
-            <li><img src="img/sql.png" alt="SQL"></li>
-            <li><img src="img/git.png" alt="Git"></li>
-            <li><img src="img/Linux.png" alt="Linux"></li>
-            <li><img src="img/postgres.png" alt="postgres"></li>
-        </ul>        
+            <li onclick="showPopup({title: 'HTML', description: 'Langage de balisage utilisé pour structurer le contenu sur le web.'})"><img src="img/HTML.png" alt="HTML"></li>
+            <li onclick="showPopup({title: 'CSS', description: 'Langage de style utilisé pour décrire la présentation des documents HTML.'})"><img src="img/CSS.png" alt="CSS"></li>
+            <li onclick="showPopup({title: 'JavaScript', description: 'Langage de programmation utilisé pour créer des pages web interactives.'})"><img src="img/javascript.png" alt="JavaScript"></li>
+            <li onclick="showPopup({title: 'Python', description: 'Langage de programmation polyvalent et facile à apprendre.'})"><img src="img/python.png" alt="Python"></li>
+            <li onclick="showPopup({title: 'Java', description: 'Langage de programmation orienté objet utilisé pour développer des applications.'})"><img src="img/java.png" alt="Java"></li>
+            <li onclick="showPopup({title: 'SQL', description: 'Langage de requête utilisé pour gérer et manipuler des bases de données.'})"><img src="img/sql.png" alt="SQL"></li>
+        </ul>
+        <h4>Frameworks</h4>
+        <ul>
+            <li onclick="showPopup({title: 'Spring Boot', description: 'Framework Java utilisé pour créer des applications web robustes.'})"><img src="img/spring.png" alt="Spring Boot"></li>
+            <li onclick="showPopup({title: 'React', description: 'Bibliothèque JavaScript pour construire des interfaces utilisateur.'})"><img src="img/react.png" alt="React"></li>
+        </ul>
+        <h4>Soft Skills</h4>
+        <ul>
+            <li onclick="showPopup({title: 'Communication', description: 'Capacité à transmettre des informations de manière claire et efficace.'})">Communication</li>
+            <li onclick="showPopup({title: 'Travail d\'équipe', description: 'Capacité à collaborer efficacement avec d\'autres personnes.'})">Travail d'équipe</li>
+            <li onclick="showPopup({title: 'Gestion du temps', description: 'Capacité à gérer son temps et ses priorités de manière efficace.'})">Gestion du temps</li>
+        </ul>
+        <h4>Langues Parlées</h4>
+        <ul>
+            <li onclick="showPopup({title: 'Français', description: 'Langue maternelle.'})">Français</li>
+            <li onclick="showPopup({title: 'Anglais', description: 'Niveau bilingue.'})">Anglais</li>
+        </ul>
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <button class="popup-close" onclick="closePopup()">×</button>
+        <h4 id="popup-title"></h4>
+        <p id="popup-description"></p>
     </div>
 </body>
 </html>
