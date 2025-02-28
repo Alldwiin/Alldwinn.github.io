@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Théo Vienne</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header">
@@ -26,15 +27,23 @@
         <h3>Expériences</h3>
         <h4>Stages</h4>
         <ul>
-            <li>Stage de 2éme année : Développeur Python au L2EP dans l'équipe OMN - 2024</li>
-            <li>Stage Mise en Rayon Leclerc – 2022</li>
-            <li>Stage Découverte Réseaux Leclerc – 2017</li>
+            <li onclick="showPopup({title: 'Stage de 2éme année : Développeur Python au L2EP dans l\'équipe OMN - 2024', description: `Ce stage de 2 mois m'a permis d'apprendre la programmation avancée en python ainsi que la création d'un logiciel métier à partir de rien.`})">Stage de 2éme année : Développeur Python au L2EP dans l'équipe OMN - 2024</li>
+            <li onclick="showPopup({title: 'Stage Mise en Rayon Leclerc – 2022', description: `Ce stage d'une semaine m'a permis de valider mon service civique ainsi que d'apprendre le travail en entreprise, l'ordre et la rigueur.`})">Stage Mise en Rayon Leclerc – 2022</li>
+            <li onclick="showPopup({title: 'Stage Découverte Réseaux Leclerc – 2017', description: `Ce stage de 3 jours m'a permis de découvrir la mise en réseau et le fonctionnement du network d'un hypermarché.`})">Stage Découverte Réseaux Leclerc – 2017</li>
         </ul>
         <h4>Emplois</h4>
         <ul>
-            <li>Manutention Agroalimentaire – 2021</li>
-            <li>Service Civique à Unis Cité Cœur de Flandres – 2022</li>
+            <li onclick="showPopup({title: 'Manutention Agroalimentaire – 2021', description: `Ce contrat d'une semaine en usine m'a permis de développer de la dextérité ainsi que de decouvrir l'effort  de travail.`})">Manutention Agroalimentaire – 2021</li>
+            <li onclick="showPopup({title: 'Service Civique à Unis Cité Cœur de Flandres – 2022', description: `Ce service civique de 8 mois m'a appris principalement le travail d'équipe, la communication, la gestion du temps et des ressources ainsi que le contact social.`})">Service Civique à Unis Cité Cœur de Flandres – 2022</li>
         </ul>
+    </div>
+
+    <!-- Popups -->
+    <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <button class="popup-close" onclick="closePopup()">×</button>
+        <h4 id="popup-title"></h4>
+        <p id="popup-description"></p>
     </div>
 </body>
 </html>
